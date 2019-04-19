@@ -1,0 +1,16 @@
+package: github.com/aamsur/goshort
+import:
+- package: git.qasico.com/cuxs/common
+  subpackages:
+  - log
+- package: git.qasico.com/cuxs/cuxs
+- package: git.qasico.com/cuxs/orm
+- package: git.qasico.com/cuxs/validation
+- package: github.com/dgrijalva/jwt-go
+- package: github.com/labstack/echo
+  version: ^v3.3.10
+
+  testImport:
+  - package: github.com/stretchr/testify
+    subpackages:
+    - assert

@@ -1,0 +1,23 @@
+#
+# 
+# 
+# 
+#
+
+# compiled binary
+api
+
+# ignoring exts
+*.exe
+*.cov
+*.tmp
+.env
+
+# ignoring dirs
+.idea/
+.idea_modules/
+vendor/
+
+# ignoring files
+glide.lock
+Gopkg.lock
