@@ -1,11 +1,8 @@
 #
-# 
-# 
-# 
 #
 
 # compiled binary
-api
+goshort
 
 # ignoring exts
 *.exe
