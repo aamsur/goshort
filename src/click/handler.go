@@ -32,7 +32,7 @@ func (h *Handler) redirect(c echo.Context) (e error) {
 
 		return ctx.Redirect(http.StatusMovedPermanently, l.LongUrl)
 	} else {
-		drp := env.GetString("DEFAULT_REDIRECT_PREFIX", "localhost/?yourhash=")
+		drp := env.GetString("DEFAULT_REDIRECT_PREFIX", "http://localhost/?yourhash=")
 		defaultRedirect := drp + ctx.Param("hash")
 
 		return ctx.Redirect(http.StatusMovedPermanently, defaultRedirect)
