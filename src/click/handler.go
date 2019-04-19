@@ -28,12 +28,13 @@ func (h *Handler) redirect(c echo.Context) (e error) {
 	header.Set("X-Accel-Expires", "0")
 
 	if e == nil {
-		CreateLog(l)
+		CreateLinkLog(l)
 
 		return ctx.Redirect(http.StatusMovedPermanently, l.LongUrl)
 	} else {
 		drp := env.GetString("DEFAULT_REDIRECT_PREFIX", "http://localhost/?yourhash=")
 		defaultRedirect := drp + ctx.Param("hash")
+		CreateJustRedirectLog(defaultRedirect)
 
 		return ctx.Redirect(http.StatusMovedPermanently, defaultRedirect)
 	}

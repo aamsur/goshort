@@ -23,12 +23,17 @@ func GetByShortUrl(hash string) (l *model.Link, e error) { // Make a Regex to sa
 	return nil, e
 }
 
-func CreateLog(l *model.Link) {
+func CreateLinkLog(l *model.Link) {
 	l.Clicked = l.Clicked + 1
 	l.LastClickedAt = time.Now()
 	l.UpdatedAt = l.LastClickedAt
 	l.Save("Clicked", "LastClickedAt", "UpdatedAt")
 
 	var ll = &model.LinkLog{ShortUrl: l.ShortUrl, ClickedAt: l.LastClickedAt}
+	ll.Save()
+}
+
+func CreateJustRedirectLog(shortUrl string) {
+	var ll = &model.LinkLog{ShortUrl: shortUrl, ClickedAt: time.Now()}
 	ll.Save()
 }
