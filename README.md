@@ -1,4 +1,4 @@
-# Simple Link Shortener with Golang
+# Simple Link Shortener with Golang (Alternative goo.gl)
 
 ## Try it out
   - clone
